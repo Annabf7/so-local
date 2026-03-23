@@ -1,0 +1,341 @@
+/* ── Layout principal ──────────────────────────────────────────────────────── */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
+.header {
+  text-align: center;
+  padding: 1rem 0 0.5rem;
+}
+
+.header h1 {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--black);
+  line-height: 1;
+}
+
+.header p {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 0.5rem;
+}
+
+/* ── Tabs ──────────────────────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  padding: 0.65rem 1.25rem;
+  border: none;
+  background: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+
+.tab:hover    { color: var(--black); }
+.tab--active  { color: var(--black); border-bottom-color: var(--black); }
+
+.tab--logout {
+  margin-left: auto;
+  color: var(--red) !important;
+}
+.tab--logout:hover { color: var(--red); opacity: 0.75; }
+
+/* ── Cards ─────────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.card h2 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--black);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Formularis ────────────────────────────────────────────────────────────── */
+.form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.form input,
+.form select {
+  flex: 1;
+  min-width: 130px;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.875rem;
+  background: var(--cream);
+  color: var(--black);
+  transition: border-color 0.15s;
+}
+
+.form input:focus,
+.form select:focus {
+  outline: none;
+  border-color: var(--black);
+}
+
+.form button {
+  padding: 0.6rem 1.4rem;
+  background: var(--black);
+  color: var(--cream);
+  border: 1px solid var(--black);
+  border-radius: 3px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.form button:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+/* ── Filtres ───────────────────────────────────────────────────────────────── */
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filters select,
+.filters input {
+  flex: 1;
+  min-width: 130px;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.85rem;
+  background: var(--cream);
+  color: var(--black);
+}
+
+.filters select:focus,
+.filters input:focus {
+  outline: none;
+  border-color: var(--black);
+}
+
+/* ── Taula ─────────────────────────────────────────────────────────────────── */
+.table-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  min-width: 400px;
+}
+
+th {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  color: var(--gray);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 0.8rem 0.75rem;
+  border-bottom: 1px solid var(--cream-dark);
+  color: var(--black);
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--cream); }
+
+/* ── Badges ────────────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  background: var(--cream-dark);
+  padding: 0.2rem 0.65rem;
+  border-radius: 2px;
+  font-size: 0.78rem;
+  color: var(--gray);
+  letter-spacing: 0.03em;
+}
+
+/* ── Comptador ─────────────────────────────────────────────────────────────── */
+.count {
+  display: inline-block;
+  background: var(--cream-dark);
+  color: var(--gray);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.1rem 0.5rem;
+  border-radius: 2px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  font-family: var(--font-sans);
+}
+
+/* ── Botó eliminar ─────────────────────────────────────────────────────────── */
+.btn-delete {
+  padding: 0.3rem 0.75rem;
+  background: transparent;
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-delete:hover {
+  background: var(--red);
+  color: white;
+}
+
+/* ── Edició inline ─────────────────────────────────────────────────────────── */
+.inline-input {
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.85rem;
+  background: var(--cream);
+  color: var(--black);
+  font-family: var(--font-sans);
+}
+
+.inline-input:focus {
+  outline: none;
+  border-color: var(--black);
+}
+
+.row-actions {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.btn-edit {
+  padding: 0.3rem 0.75rem;
+  background: transparent;
+  color: var(--black);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: border-color 0.15s;
+}
+
+.btn-edit:hover { border-color: var(--black); }
+
+.btn-save {
+  padding: 0.3rem 0.75rem;
+  background: var(--black);
+  color: var(--cream);
+  border: 1px solid var(--black);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.btn-save:hover { background: #333; }
+
+.btn-cancel {
+  padding: 0.3rem 0.75rem;
+  background: transparent;
+  color: var(--gray);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.btn-cancel:hover { color: var(--black); border-color: var(--black); }
+
+/* ── Paginació ─────────────────────────────────────────────────────────────── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.pagination button {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--card);
+  color: var(--black);
+  font-size: 0.9rem;
+  transition: border-color 0.15s;
+}
+
+.pagination button:hover:not(:disabled) { border-color: var(--black); }
+.pagination button:disabled { opacity: 0.3; cursor: default; }
+.pagination span { font-size: 0.82rem; color: var(--gray); letter-spacing: 0.05em; }
+
+/* ── Estats ────────────────────────────────────────────────────────────────── */
+.error { color: var(--red); font-size: 0.85rem; }
+.empty { color: var(--gray-light); font-size: 0.875rem; text-align: center; padding: 1.5rem 0; }
+
+/* ── Responsiu ─────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .container { padding: 1.5rem 1rem; gap: 1.5rem; }
+  .header h1 { font-size: 2.2rem; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 1rem 0.75rem; }
+  .header h1 { font-size: 1.8rem; }
+  .card { padding: 1.25rem; }
+  .form input, .form select, .form button { min-width: 100%; }
+  .tab { padding: 0.55rem 0.85rem; font-size: 0.72rem; }
+}

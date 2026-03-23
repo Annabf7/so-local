@@ -1,0 +1,40 @@
+/* ── Variables globals ─────────────────────────────────────────────────────── */
+:root {
+  --cream:      #F2EDE4;
+  --cream-dark: #E8E0D4;
+  --black:      #1C1917;
+  --red:        #8B1A1A;
+  --gray:       #6B6560;
+  --gray-light: #B5AFA8;
+  --border:     #D9D2C8;
+  --card:       #FFFDF9;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'Inter', system-ui, sans-serif;
+}
+
+/* ── Reset ─────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--black);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+input, select {
+  font-family: var(--font-sans);
+}
